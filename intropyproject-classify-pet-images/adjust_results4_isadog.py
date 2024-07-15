@@ -86,9 +86,13 @@ def adjust_results4_isadog(results_dic, dogfile):
           # Check if the dogname(line) exists in dognames_dic, if note add
           # dogname(line) to dognames_dic as the key with the value of 1
           if line not in dognames_dic:
+            print(f'Adding {line} to dognames_dic')
             dognames_dic[line] = 1
 
-          #read in nex line of file to process if it exists
+          else:
+            print(f'WARNING: {line} already exists in dognames_dic')
+
+          #read in next line of file to process if it exists
           line = file.readline()
     
     # Add pet labels and classifier labels are dogs or not dogs to results_dic
