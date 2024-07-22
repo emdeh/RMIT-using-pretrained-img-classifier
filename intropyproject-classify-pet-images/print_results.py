@@ -67,11 +67,8 @@ def print_results(results_dic, results_stats_dic, model,
         "***")
     print("{:20}: {:3d}".format('N Images', results_stats_dic['n_images']))
     print("{:20}: {:3d}".format('N Dog Images', results_stats_dic['n_dogs_img']))
-
-    # prints the text string 'N Not-Dog images', then the number of NOT-dog images
-    # accessed by key 'n_notdogs_img' in results_stats_dic
-
     print("{:20}: {:3d}".format('N Not-Dog Images', results_stats_dic['n_notdogs_img']))
+       
                 
     # determines if keys in results_stats_dic start with p, indicated
     # percentages. if so, prints out the key and value
