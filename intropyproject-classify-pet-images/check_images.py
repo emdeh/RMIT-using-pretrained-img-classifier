@@ -113,9 +113,10 @@ def main():
     # in the function call with in_arg.arch  Once you have done the 
     # replacements your function call should look like this: 
     #      print_results(results, results_stats, in_arg.arch, True, True)
+    
     # Prints summary results, incorrect classifications of dogs (if requested)
     # and incorrectly classified breeds (if requested)
-    print_results(results, results_stats, None, True, True)
+    print_results(results, results_stats, in_arg.arch, True, True)
     
     # TODO 0: Measure total program runtime by collecting end time
     end_time = time()
