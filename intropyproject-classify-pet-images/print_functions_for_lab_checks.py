@@ -77,7 +77,6 @@ def check_creating_pet_image_labels(results_dic):
             else:
                 break
 
-
 def check_classifying_images(results_dic):
     """    For Lab: Classifying Images - 11/12. Classifying Images
     Prints Pet Image Label and Classifier Label for ALL Matches followed by ALL 
@@ -109,6 +108,9 @@ def check_classifying_images(results_dic):
         n_notmatch = 0
     
         # Prints all Matches first
+        print("\n")
+        print("\n")
+        print("Printing pet image label and classifier label for ALL Matches:")
         print("\nMATCH:\n")
         for key in results_dic:
 
@@ -120,7 +122,9 @@ def check_classifying_images(results_dic):
                 print("{:>30}: \nReal: {:>26}   Classifier: {:>30}".format(key, 
                       results_dic[key][0], results_dic[key][1]))
 
+        print("**************\n\n")
         # Prints all NOT-Matches next
+        print("Printing pet image label and classifier label for ALL NOT Matches:")
         print("\n NOT A MATCH:")
         for key in results_dic:
         
@@ -133,8 +137,12 @@ def check_classifying_images(results_dic):
                       results_dic[key][0], results_dic[key][1]))
 
         # Prints Total Number of Images - expects 40 from pet_images folder
-        print("\n# Total Images",n_match + n_notmatch ,"\n# Matches:",n_match ,
+        print("**************\n\n")
+        print("Printing summary results...")
+        print("# Total Images",n_match + n_notmatch ,"\n# Matches:",n_match ,
               "\n# NOT Matches:",n_notmatch)
+        print()
+        print("\n**************\n\n")
 
  
 def check_classifying_labels_as_dogs(results_dic):
@@ -176,6 +184,8 @@ def check_classifying_labels_as_dogs(results_dic):
         n_notmatch = 0
     
         # Prints all Matches first
+        print("**************\n\n")
+        print("Printing pet image label, classifier label, pet is-a-dog label, classifier is-a-dog label for ALL Matches:")
         print("\n     MATCH:")
         for key in results_dic:
 
@@ -189,6 +199,8 @@ def check_classifying_labels_as_dogs(results_dic):
                       results_dic[key][4]))
 
         # Prints all NOT-Matches next
+        print("**************\n\n")
+        print("Printing pet image label, classifier label, pet is-a-dog label, classifier is-a-dog label for ALL NOT Matches:")
         print("\n NOT A MATCH:")
         for key in results_dic:
         
@@ -202,8 +214,12 @@ def check_classifying_labels_as_dogs(results_dic):
                       results_dic[key][4]))
 
         # Prints Total Number of Images - expects 40 from pet_images folder
-        print("\n# Total Images",n_match + n_notmatch, "# Matches:",n_match ,
-              "# NOT Matches:",n_notmatch)
+        print("**************\n\n")
+        print("Printing summary results...")
+        print("# Total Images",n_match + n_notmatch, "\n# Matches:",n_match ,
+              "\n# NOT Matches:",n_notmatch)
+
+        print("\n**************\n\n")
 
 
 
