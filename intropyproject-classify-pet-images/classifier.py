@@ -4,6 +4,9 @@ import torchvision.transforms as transforms
 from torch.autograd import Variable
 import torchvision.models as models
 from torch import __version__
+from suppress_warning import suppress_typedstorage_warning
+
+suppress_typedstorage_warning()
 
 resnet18 = models.resnet18(pretrained=True)
 alexnet = models.alexnet(pretrained=True)
