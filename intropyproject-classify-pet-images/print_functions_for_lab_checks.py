@@ -37,7 +37,7 @@ def check_command_line_arguments(in_arg):
               "\n    arch =", in_arg.arch, "\n dogfile =", in_arg.dogfile)
 
 def check_creating_pet_image_labels(results_dic):
-    """    For Lab: Classifying Images - 9/10. Creating Pet Image Labels
+    """For Lab: Classifying Images - 9/10. Creating Pet Image Labels
     Prints first 10 key-value pairs and makes sure there are 40 key-value 
     pairs in your results_dic dictionary. Assumes you defined the results_dic
     dictionary as was outlined in 
@@ -109,7 +109,7 @@ def check_classifying_images(results_dic):
         n_notmatch = 0
     
         # Prints all Matches first
-        print("\n     MATCH:")
+        print("\nMATCH:\n")
         for key in results_dic:
 
             # Prints only if a Match Index 2 == 1
@@ -117,7 +117,7 @@ def check_classifying_images(results_dic):
 
                 # Increments Match counter
                 n_match += 1
-                print("\n{:>30}: \nReal: {:>26}   Classifier: {:>30}".format(key, 
+                print("{:>30}: \nReal: {:>26}   Classifier: {:>30}".format(key, 
                       results_dic[key][0], results_dic[key][1]))
 
         # Prints all NOT-Matches next
@@ -133,8 +133,8 @@ def check_classifying_images(results_dic):
                       results_dic[key][0], results_dic[key][1]))
 
         # Prints Total Number of Images - expects 40 from pet_images folder
-        print("\n# Total Images",n_match + n_notmatch, "# Matches:",n_match ,
-              "# NOT Matches:",n_notmatch)
+        print("\n# Total Images",n_match + n_notmatch ,"\n# Matches:",n_match ,
+              "\n# NOT Matches:",n_notmatch)
 
  
 def check_classifying_labels_as_dogs(results_dic):
@@ -299,12 +299,12 @@ def check_calculating_results(results_dic, results_stats_dic):
     
         # prints calculated statistics
         print("\n ** Statistics from calculates_results_stats() function:")
-        print("N Images: {:2d}  N Dog Images: {:2d}  N NotDog Images: {:2d} \nPct Corr dog: {:5.1f} Pct Corr NOTdog: {:5.1f}  Pct Corr Breed: {:5.1f}".format(
+        print("N Images: {:2d}  \nN Dog Images: {:2d}  \nN NotDog Images: {:2d} \n\nPct Corr dog: {:5.1f} \nPct Corr NOTdog: {:5.1f}  \nPct Corr Breed: {:5.1f}".format(
               results_stats_dic['n_images'], results_stats_dic['n_dogs_img'],
               results_stats_dic['n_notdogs_img'], results_stats_dic['pct_correct_dogs'],
               results_stats_dic['pct_correct_notdogs'],
               results_stats_dic['pct_correct_breed']))
         print("\n ** Check Statistics - calculated from this function as a check:")
-        print("N Images: {:2d}  N Dog Images: {:2d}  N NotDog Images: {:2d} \nPct Corr dog: {:5.1f} Pct Corr NOTdog: {:5.1f}  Pct Corr Breed: {:5.1f}".format(
+        print("N Images: {:2d}  \nN Dog Images: {:2d}  \nN NotDog Images: {:2d} \n\nPct Corr dog: {:5.1f} \nPct Corr NOTdog: {:5.1f}  \nPct Corr Breed: {:5.1f}".format(
               n_images, n_pet_dog, n_pet_notd, pct_corr_dog, pct_corr_notdog,
               pct_corr_breed))

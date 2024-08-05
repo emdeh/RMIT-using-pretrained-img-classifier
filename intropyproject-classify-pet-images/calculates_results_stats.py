@@ -92,7 +92,7 @@ def calculates_results_stats(results_dic):
         if results_dic[key][2] == 1:
                     results_stats_dic['n_match'] += 1
 
-             # Pet image label is a dog and labels match - count correct breed
+        # Pet image label is a dog and labels match - count correct breed
         if results_dic[key][3] == 1 and results_dic[key][2] == 1:
                     results_stats_dic['n_correct_breed'] += 1
 
@@ -123,13 +123,24 @@ def calculates_results_stats(results_dic):
                 results_stats_dic['n_dogs_img'])
 
         # Calculate % correct for matches
-        results_stats_dic['pct_match'] = (results_stats_dic['n_match'] / results_stats_dic['n_images']) * 100.0
+        try:
+                results_stats_dic['pct_match'] = (results_stats_dic['n_match'] 
+                / results_stats_dic['n_images']) * 100.0
+        except ZeroDivisionError:
+                print("No pictures matched")
+                results_stats_dic['pct_match'] = 0.0
 
         # Calculate % correct dogs
-        results_stats_dic['pct_correct_dogs'] = (results_stats_dic['n_correct_dogs'] / results_stats_dic['n_dogs_img']) * 100.0
+        try:
+                results_stats_dic['pct_correct_dogs'] = (results_stats_dic['n_correct_dogs'] / results_stats_dic['n_dogs_img']) * 100.0
+        except ZeroDivisionError:
+                results_stats_dic['pct_correct_dogs'] = 0.0
 
         # Calculate % correct breed of dog
-        results_stats_dic['pct_correct_breed'] = (results_stats_dic['n_correct_breed'] / results_stats_dic['n_dogs_img']) * 100.0
+        try:
+                results_stats_dic['pct_correct_breed'] = (results_stats_dic['n_correct_breed'] / results_stats_dic['n_dogs_img']) * 100.0
+        except ZeroDivisionError:
+                results_stats_dic['pct_correct_breed'] = 0.0
 
         # Calculate % correct not dogs images using conditional statement for
         # when there are no 'not dogs' images
